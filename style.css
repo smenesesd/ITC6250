@@ -3,3 +3,8 @@
     align-items: center;
     gap: 20px;
 }
+
+button {
+    padding: 8px;
+    font-size: 16px;
+}
