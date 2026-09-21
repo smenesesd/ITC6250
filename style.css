@@ -22,3 +22,22 @@ button {
     border: 1px solid #C8102E;
     border-radius: 10px;
 }
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.quick-links a {
+    padding: 12px 20px;
+    background-color: #eeeeee;
+    border: 1px solid #C8102E;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+.quick-links a:hover {
+    background-color: #dddddd;
+}
