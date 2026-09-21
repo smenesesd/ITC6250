@@ -8,3 +8,13 @@ function showInfo(){
     }
     
 }
+
+function showWeather(){
+    let weather = document.getElementById("weather");
+
+    if(weather.innerHTML == "") {
+        weather.innerHTML = "Boston: 72°F - Party Cloudy";
+    } else {
+        weather.innerHTML = "";
+    }
+}
