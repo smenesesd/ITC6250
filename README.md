@@ -20,6 +20,8 @@ Campus Life Hub is a web application designed to bring useful student-life and r
 
 The goal of this project is to create a simple and interactive campus resource that can be expanded in future versions with additional features and APIs.
 
-## Author
+## Authors
 
 Samuel Meneses
+Fanjie Fu
+Xuewei Yin
