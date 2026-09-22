@@ -18,3 +18,18 @@ function showWeather(){
         weather.innerHTML = "";
     }
 }
+
+function showAll(){
+    document.getElementById("sports").style.display = "block";
+    document.getElementById("events").style.display = "block";
+}
+
+function showSports(){
+    document.getElementById("sports").style.display = "block";
+    document.getElementById("events").style.display = "none";
+}
+
+function showEvents(){
+    document.getElementById("sports").style.display = "none";
+    document.getElementById("events").style.display = "block";
+}
