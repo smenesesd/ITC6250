@@ -35,3 +35,36 @@ a {
     left: 0;
     bottom: 0;
 }
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-section img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    background: white;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.logo-section h2 {
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-nav a,
+.sidebar-bottom a {
+    color: white;
+    padding: 13px 15px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
