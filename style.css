@@ -68,3 +68,22 @@ a {
     border-radius: 8px;
     transition: 0.2s;
 }
+
+.sidebar-nav a:hover,
+.sidebar-bottom a:hover,
+.sidebar-nav .active {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+/* Main Content */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 25px 40px;
+}
+
