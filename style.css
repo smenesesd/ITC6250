@@ -87,3 +87,46 @@ a {
     padding: 25px 40px;
 }
 
+/*Top bar*/
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 320px;
+    padding: 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    background: white;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.student-info span {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    margin-top: 3px;
+}
+
+.student-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #c8102e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+}
