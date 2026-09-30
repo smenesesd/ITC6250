@@ -339,4 +339,11 @@ a {
     line-height: 1.5;
 }
 
+/* Footer */
 
+footer {
+    text-align: center;
+    color: #888;
+    padding: 25px 0;
+    font-size: 13px;
+}
