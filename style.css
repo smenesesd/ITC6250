@@ -278,3 +278,41 @@ a {
     border-color: #c8102e;
     color: #c8102e;
 }
+
+/* Explore Cards */
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.explore-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.explore-icon {
+    font-size: 50px;
+}
+
+.category {
+    color: #c8102e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.explore-card h3 {
+    margin: 6px 0;
+}
+
+.explore-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
