@@ -130,3 +130,36 @@ a {
     font-weight: bold;
 
 }
+
+/* Welcome Banner */
+
+.welcome-banner {
+    background: linear-gradient(135deg, #c8102e, #e23951);
+    color: white;
+    border-radius: 18px;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.welcome-banner h1 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.welcome-banner p {
+    max-width: 600px;
+}
+
+.small-text {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.85;
+}
+
+.welcome-icon {
+    font-size: 65px;
+}
