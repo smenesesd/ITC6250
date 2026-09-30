@@ -316,3 +316,27 @@ a {
     color: #666;
     margin-bottom: 15px;
 }
+
+/* Campus Updates */
+
+.updates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.update-item {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    border-left: 4px solid #c8102e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.update-item p {
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+
