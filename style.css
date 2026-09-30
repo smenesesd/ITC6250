@@ -237,3 +237,25 @@ a {
 .explore-card button:hover {
     background: #a90d26;
 }
+
+/* Quick Links */
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quick-links a {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 12px 18px;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+.quick-links a:hover {
+    border-color: #c8102e;
+    color: #c8102e;
+}
