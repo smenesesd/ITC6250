@@ -8,8 +8,12 @@ import {
 
 import { setupNavigation } from "./ui/navigation.js";
 
+import { getCampusData } from "./services/apiService.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+import { displayCampusData } from "./ui/campusData.js";
+
+
+document.addEventListener("DOMContentLoaded", async () => {
 
     const weatherButton = document.getElementById("weatherButton");
     const allButton = document.getElementById("allButton");
@@ -33,4 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setupNavigation();
+
+
+    // Load campus data
+    const campusData = await getCampusData();
+
+    displayCampusData(campusData);
 });
