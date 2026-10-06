@@ -6,22 +6,19 @@ import {
     showEvents
 } from "./ui/filters.js";
 
+import { setupNavigation } from "./ui/navigation.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Weather button
     const weatherButton = document.getElementById("weatherButton");
-
-    if (weatherButton) {
-        weatherButton.addEventListener("click", showWeather);
-    }
-
-
-    // Filter buttons
     const allButton = document.getElementById("allButton");
     const sportsButton = document.getElementById("sportsButton");
     const eventsButton = document.getElementById("eventsButton");
 
+    if (weatherButton) {
+        weatherButton.addEventListener("click", showWeather);
+    }
 
     if (allButton) {
         allButton.addEventListener("click", showAll);
@@ -35,4 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
         eventsButton.addEventListener("click", showEvents);
     }
 
+    setupNavigation();
 });
