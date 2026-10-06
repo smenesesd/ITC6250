@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupNavigation();
 
 
-    // Load campus data
+    // Load and display campus data
     const campusData = await getCampusData();
 
     displayCampusData(campusData);
