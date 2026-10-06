@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Life Hub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 
@@ -101,7 +102,7 @@
                     <div class="card-icon">🌤️</div>
                     <h3>Weather</h3>
                     <p id="weather">Check today's weather.</p>
-                    <button onclick="showWeather()">View Weather</button>
+                    <button id="weatherButton">View Weather</button>
                 </div>
 
                 <!-- Recreation -->
@@ -177,9 +178,9 @@
                 </div>
 
                 <div class="filter-buttons">
-                    <button onclick="showAll()">All</button>
-                    <button onclick="showSports()">Sports</button>
-                    <button onclick="showEvents()">Events</button>
+                    <button id="allButton">All</button>
+                    <button id="sportsButton">Sports</button>
+                    <button id="eventsButton">Events</button>
                 </div>
 
                 <div class="explore-grid">
