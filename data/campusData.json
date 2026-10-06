@@ -1,0 +1,44 @@
+{
+    "events": [
+        {
+            "title": "Fall Festival",
+            "description": "Join students for a campus event.",
+            "category": "Events",
+            "location": "Snell Library"
+        },
+        {
+            "title": "Student Networking Night",
+            "description": "Meet other students and connect with the campus community.",
+            "category": "Events",
+            "location": "Student Center"
+        }
+    ],
+    "sports": [
+        {
+            "title": "Intramural Soccer",
+            "description": "Check upcoming soccer games and schedules.",
+            "category": "Sports",
+            "location": "Carter Field"
+        },
+        {
+            "title": "Intramural Basketball",
+            "description": "View upcoming basketball games.",
+            "category": "Sports",
+            "location": "Marino Recreation Center"
+        }
+    ],
+    "updates": [
+        {
+            "title": "Recreation",
+            "message": "Check the latest facility availability."
+        },
+        {
+            "title": "Intramural Sports",
+            "message": "New games have been added to this week's schedule."
+        },
+        {
+            "title": "Campus Events",
+            "message": "Several student events are happening this week."
+        }
+    ]
+}

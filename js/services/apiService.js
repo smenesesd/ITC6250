@@ -3,7 +3,7 @@
 
 export async function getCampusData() {
     try {
-        const response = await fetch("./data/campusData.json");
+        const response = await fetch("../../data/campusData.json");
 
         if (!response.ok) {
             throw new Error("Unable to load campus data.");
@@ -12,7 +12,7 @@ export async function getCampusData() {
         return await response.json();
 
     } catch (error) {
-        console.error("Data access error:", error);
+        console.error("Error loading campus data:", error);
         return null;
     }
 }
