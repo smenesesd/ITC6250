@@ -1,86 +1,112 @@
+
 export function displayCampusData(data) {
     if (!data) {
         console.error("No campus data available.");
         return;
     }
 
-    displayEvents(data.events);
-    displaySports(data.sports);
-    displayUpdates(data.updates);
+    displayEvents(data.events || []);
+    displaySports(data.sports || []);
+    displayUpdates(data.updates || []);
 }
 
+function showEmptyState(container, message) {
+    const text = document.createElement("p");
+    text.textContent = message;
+    container.appendChild(text);
+}
 
 function displayEvents(events) {
-    const eventsContainer = document.getElementById("events-list");
+    const container = document.getElementById("events-list");
 
-    if (!eventsContainer) {
+    if (!container) return;
+
+    container.replaceChildren();
+
+    if (events.length === 0) {
+        showEmptyState(container, "No campus events available.");
         return;
     }
-
-    eventsContainer.innerHTML = "";
 
     events.forEach((event) => {
         const card = document.createElement("div");
-
         card.className = "dynamic-card";
 
-        card.innerHTML = `
-            <span class="category">EVENT</span>
-            <h3>${event.title}</h3>
-            <p>${event.description}</p>
-            <small>📍 ${event.location}</small>
-        `;
+        const category = document.createElement("span");
+        category.className = "category";
+        category.textContent = "EVENT";
 
-        eventsContainer.appendChild(card);
+        const title = document.createElement("h3");
+        title.textContent = event.title;
+
+        const description = document.createElement("p");
+        description.textContent = event.description;
+
+        const location = document.createElement("small");
+        location.textContent = `📍 ${event.location}`;
+
+        card.append(category, title, description, location);
+        container.appendChild(card);
     });
 }
 
-
 function displaySports(sports) {
-    const sportsContainer = document.getElementById("sports-list");
+    const container = document.getElementById("sports-list");
 
-    if (!sportsContainer) {
+    if (!container) return;
+
+    container.replaceChildren();
+
+    if (sports.length === 0) {
+        showEmptyState(container, "No sports games available.");
         return;
     }
-
-    sportsContainer.innerHTML = "";
 
     sports.forEach((sport) => {
         const card = document.createElement("div");
-
         card.className = "dynamic-card";
 
-        card.innerHTML = `
-            <span class="category">SPORTS</span>
-            <h3>${sport.title}</h3>
-            <p>${sport.description}</p>
-            <small>📍 ${sport.location}</small>
-        `;
+        const category = document.createElement("span");
+        category.className = "category";
+        category.textContent = "SPORTS";
 
-        sportsContainer.appendChild(card);
+        const title = document.createElement("h3");
+        title.textContent = sport.title;
+
+        const description = document.createElement("p");
+        description.textContent = sport.description;
+
+        const location = document.createElement("small");
+        location.textContent = `📍 ${sport.location}`;
+
+        card.append(category, title, description, location);
+        container.appendChild(card);
     });
 }
 
-
 function displayUpdates(updates) {
-    const updatesContainer = document.getElementById("updates-list");
+    const container = document.getElementById("updates-list");
 
-    if (!updatesContainer) {
+    if (!container) return;
+
+    container.replaceChildren();
+
+    if (updates.length === 0) {
+        showEmptyState(container, "No campus updates available.");
         return;
     }
 
-    updatesContainer.innerHTML = "";
-
     updates.forEach((update) => {
         const item = document.createElement("div");
-
         item.className = "update-item";
 
-        item.innerHTML = `
-            <strong>${update.title}</strong>
-            <p>${update.message}</p>
-        `;
+        const title = document.createElement("strong");
+        title.textContent = update.title;
 
-        updatesContainer.appendChild(item);
+        const message = document.createElement("p");
+        message.textContent = update.message;
+
+        item.append(title, message);
+        container.appendChild(item);
     });
 }
