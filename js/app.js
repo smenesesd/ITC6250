@@ -12,6 +12,8 @@ import { getCampusData } from "./services/apiService.js";
 
 import { displayCampusData } from "./ui/campusData.js";
 
+import { setupAdminAuth } from "./ui/admin.js";
+
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -36,7 +38,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         eventsButton.addEventListener("click", showEvents);
     }
 
+    // COnfigure navigation and admin auth
+
     setupNavigation();
+    setupAdminAuth();
 
 
     // Load and display campus data
