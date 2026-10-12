@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,180 +12,230 @@
 
 <body>
 
-<div class="app-container">
+    <div class="app-container">
 
-    <!-- Sidebar -->
-     <aside class="sidebar">
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-        <div class ="logo-section">
-            <img src="img/huskyLogo.png" alt="Northeastern Husky logo">
-            <h2>Campus Life Hub</h2>
-        </div>
-
-        <nav class="sidebar-nav">
-            <a href="#dashboard" class="active">Dashboard</a>
-            <a href="#events">Events</a>
-            <a href="#sports">Sports</a>
-            <a href="#weather-card">Weather</a>
-            <a href="#recreation">Recreation</a>
-            <a href="#locations">Locations</a>
-            <a href="#announcements">Announcements</a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <a href="#quick-links">Quick Links</a>
-        </div>
-
-     </aside>
-
-     <!-- Main Content -->
-      <main class="main-content">
-
-        <!-- Top bar -->
-        <header class="topbar">
-            <div class="search-box">
-                <input type="text" placeholder="Search Campus Life Hub">
+            <div class="logo-section">
+                <img src="img/huskyLogo.png" alt="Northeastern Husky logo">
+                <h2>Campus Life Hub</h2>
             </div>
 
-            <div class="student-info">
-                <div class="student-avatar">SM</div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="active">Dashboard</a>
+                <a href="#events">Events</a>
+                <a href="#sports">Sports</a>
+                <a href="#weather-card">Weather</a>
+                <a href="#recreation">Recreation</a>
+                <a href="#locations">Locations</a>
+                <a href="#announcements">Announcements</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#quick-links">Quick Links</a>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top bar -->
+            <header class="topbar">
+                <div class="search-box">
+                    <input type="text" placeholder="Search Campus Life Hub">
+                </div>
+
+                <div class="student-info">
+                    <div class="student-avatar">SM</div>
+                    <div>
+                        <strong>Samuel</strong>
+                        <span>Northeastern Student</span>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Welcome Banner -->
+            <section class="welcome-banner">
                 <div>
-                    <strong>Samuel</strong>
-                    <span>Northeastern Student</span>
-                </div>
-            </div>
-        </header>
-
-
-        <!-- Welcome Banner -->
-         <section class="welcome-banner">
-            <div>
-                <p class="small-text">Welcome back!</p>
-                <h1>Welcome to Campus Life Hub</h1>
-                <p>
-                    Find events, sports, recreation, locations and useful campus information in one place.
-                </p>
-            </div>
-
-            <div class="welcome-icon">
-                🎓
-            </div>
-         </section>
-
-                  <!-- Administrator Access -->
-         <section id="admin-access" class="content-section">
-
-            <div class="section-title">
-                <h2>Administrator Access</h2>
-                <p>Sign in to manage Campus Life Hub data.</p>
-            </div>
-
-            <form id="admin-login-form">
-
-                <div class="form-field">
-                    <label for="admin-email">Email</label>
-                    <input
-                        type="email"
-                        id="admin-email"
-                        autocomplete="username"
-                        placeholder="Administrator email"
-                        required
-                    >
+                    <p class="small-text">Welcome back!</p>
+                    <h1>Welcome to Campus Life Hub</h1>
+                    <p>
+                        Find events, sports, recreation, locations and useful campus information in one place.
+                    </p>
                 </div>
 
-                <div class="form-field">
-                    <label for="admin-password">Password</label>
-                    <input
-                        type="password"
-                        id="admin-password"
-                        autocomplete="current-password"
-                        placeholder="Enter your password"
-                        required
-                    >
+                <div class="welcome-icon">
+                    🎓
+                </div>
+            </section>
+
+            <!-- Administrator Access -->
+            <section id="admin-access" class="content-section">
+
+                <div class="section-title">
+                    <h2>Administrator Access</h2>
+                    <p>Sign in to manage Campus Life Hub data.</p>
                 </div>
 
-                <button type="submit" id="admin-login-button">
-                    Sign In
-                </button>
+                <form id="admin-login-form">
 
-                <button
-                    type="button"
-                    id="admin-logout-button"
-                    hidden
-                >
-                    Sign Out
-                </button>
+                    <div class="form-field">
+                        <label for="admin-email">Email</label>
+                        <input type="email" id="admin-email" autocomplete="username" placeholder="Administrator email"
+                            required>
+                    </div>
 
-                <p id="admin-auth-status" role="status" aria-live="polite">
-                    Not signed in.
-                </p>
+                    <div class="form-field">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" autocomplete="current-password"
+                            placeholder="Enter your password" required>
+                    </div>
 
-            </form>
-         </section>
+                    <button type="submit" id="admin-login-button">
+                        Sign In
+                    </button>
 
-         <!-- Dashboard -->
-          <section id="dashboard" class="dashboard-section">
+                    <button type="button" id="admin-logout-button" hidden>
+                        Sign Out
+                    </button>
 
-            <div class="section-title">
-                <h2>Campus Dashboard</h2>
-                <p>Quick access to the information you need.</p>
-            </div>
+                    <p id="admin-auth-status" role="status" aria-live="polite">
+                        Not signed in.
+                    </p>
 
-            <div class="dashboard">
+                </form>
 
-                <!-- Events -->
-                 <div id="events" class="card">
-                    <div class="card-icon">📅</div>
-                    <h3>Events</h3>
-                    <p>See upcoming campus events.</p>
-                    <button>View Events</button>
-                 </div>
+                <!-- Administrator Event Management -->
+                <div id="admin-events-panel" hidden>
 
-                <!-- Sports -->
-                 <div id= "sports" class="card">
-                    <div class="card-icon">⚽</div>
-                    <h3>Sports</h3>
-                    <p>Check intramural sports and games.</p>
-                    <button>View Sports</button>
-                 </div>
+                    <hr>
 
-                <!-- Weather -->
-                <div id="weather-card" class="card" >
-                    <div class="card-icon">🌤️</div>
-                    <h3>Weather</h3>
-                    <p id="weather">Check today's weather.</p>
-                    <button id="weatherButton">View Weather</button>
+                    <div class="section-title">
+                        <h3>Manage Campus Events</h3>
+                        <p>Create, edit, and delete campus events.</p>
+                    </div>
+
+                    <form id="admin-event-form">
+
+                        <input type="hidden" id="admin-event-id">
+
+                        <div class="form-field">
+                            <label for="admin-event-title">Event Title</label>
+                            <input type="text" id="admin-event-title" maxlength="120" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="admin-event-description">Description</label>
+                            <textarea id="admin-event-description" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="admin-event-category">Category</label>
+                            <select id="admin-event-category" required>
+                                <option value="general">General</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="panel">Panel</option>
+                                <option value="career">Career</option>
+                                <option value="social">Social</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="admin-event-date">Event Date</label>
+                            <input type="date" id="admin-event-date" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="admin-event-location">Location</label>
+                            <select id="admin-event-location" required>
+                                <option value="">Loading locations...</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="admin-event-save-button">
+                            Create Event
+                        </button>
+
+                        <button type="button" id="admin-event-cancel-button" hidden>
+                            Cancel Edit
+                        </button>
+
+                        <p id="admin-event-form-status" role="status" aria-live="polite"></p>
+
+                    </form>
+
+                    <div id="admin-events-management-list"></div>
+
                 </div>
 
-                <!-- Recreation -->
-                <div class="card" id="recreation">
-                    <div class="card-icon">🏸</div>
-                    <h3>Recreation</h3>
-                    <p>Find recreation facilities and activities.</p>
-                    <button>View Facilities</button>
+            </section>
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>Campus Dashboard</h2>
+                    <p>Quick access to the information you need.</p>
                 </div>
 
-                <!-- Locations -->
-                <div class="card" id="locations">
-                    <div class="card-icon">📍</div>
-                    <h3>Locations</h3>
-                    <p>Find useful campus locations.</p>
-                    <button>View Locations</button>
+                <div class="dashboard">
+
+                    <!-- Events -->
+                    <div id="events" class="card">
+                        <div class="card-icon">📅</div>
+                        <h3>Events</h3>
+                        <p>See upcoming campus events.</p>
+                        <button>View Events</button>
+                    </div>
+
+                    <!-- Sports -->
+                    <div id="sports" class="card">
+                        <div class="card-icon">⚽</div>
+                        <h3>Sports</h3>
+                        <p>Check intramural sports and games.</p>
+                        <button>View Sports</button>
+                    </div>
+
+                    <!-- Weather -->
+                    <div id="weather-card" class="card">
+                        <div class="card-icon">🌤️</div>
+                        <h3>Weather</h3>
+                        <p id="weather">Check today's weather.</p>
+                        <button id="weatherButton">View Weather</button>
+                    </div>
+
+                    <!-- Recreation -->
+                    <div class="card" id="recreation">
+                        <div class="card-icon">🏸</div>
+                        <h3>Recreation</h3>
+                        <p>Find recreation facilities and activities.</p>
+                        <button>View Facilities</button>
+                    </div>
+
+                    <!-- Locations -->
+                    <div class="card" id="locations">
+                        <div class="card-icon">📍</div>
+                        <h3>Locations</h3>
+                        <p>Find useful campus locations.</p>
+                        <button>View Locations</button>
+                    </div>
+
+                    <!-- Announcements -->
+                    <div class="card" id="announcements">
+                        <div class="card-icon">📢</div>
+                        <h3>Announcements</h3>
+                        <p>See important campus announcements.</p>
+                        <button>View Announcements</button>
+                    </div>
+
                 </div>
+            </section>
 
-                <!-- Announcements -->
-                <div class="card" id="announcements">
-                    <div class="card-icon">📢</div>
-                    <h3>Announcements</h3>
-                    <p>See important campus announcements.</p>
-                    <button>View Announcements</button>
-                </div>
-
-            </div>
-          </section>
-
-          <!-- Quick Links -->
-           <section id="quick-links" class="content-section">
+            <!-- Quick Links -->
+            <section id="quick-links" class="content-section">
 
                 <div class="section-title">
                     <h2>Quick Links</h2>
@@ -193,34 +244,34 @@
 
                 <div class="quick-links">
 
-                <a href="https://www.northeastern.edu/" target="_blank">
-                    Northeastern
-                </a>
+                    <a href="https://www.northeastern.edu/" target="_blank">
+                        Northeastern
+                    </a>
 
-                <a href="https://me.northeastern.edu/" target="_blank">
-                    Student Hub
-                </a>
+                    <a href="https://me.northeastern.edu/" target="_blank">
+                        Student Hub
+                    </a>
 
-                <a href="https://library.northeastern.edu/" target="_blank">
-                    Library
-                </a>
+                    <a href="https://library.northeastern.edu/" target="_blank">
+                        Library
+                    </a>
 
-                <a href="https://recreation.northeastern.edu/" target="_blank">
-                    Recreation
-                </a>
+                    <a href="https://recreation.northeastern.edu/" target="_blank">
+                        Recreation
+                    </a>
 
-                <a href="https://northeastern.edu/dining/" target="_blank">
-                    Dining
-                </a>
+                    <a href="https://northeastern.edu/dining/" target="_blank">
+                        Dining
+                    </a>
 
-                <a href="https://registrar.northeastern.edu/" target="_blank">
-                    Registrar
-                </a>
+                    <a href="https://registrar.northeastern.edu/" target="_blank">
+                        Registrar
+                    </a>
 
                 </div>
-           </section>
+            </section>
 
-           <!-- EXplore Campus Life -->
+            <!-- EXplore Campus Life -->
             <section class="content-section">
 
                 <div class="section-title">
@@ -238,7 +289,7 @@
 
                     <div>
                         <h3>Events</h3>
-                        <div id="events-list" class = "dynamic-list"></div>
+                        <div id="events-list" class="dynamic-list"></div>
                     </div>
 
                     <div>
@@ -249,7 +300,7 @@
             </section>
 
             <!-- Campus Updates -->
-             <section class="content-section">
+            <section class="content-section">
                 <div class="section-title">
                     <h2>Campus Updates</h2>
                     <p>Useful information from across campus.</p>
@@ -274,20 +325,21 @@
 
 
                 </div>
-             </section>
+            </section>
 
-             <!-- Footer -->
-              <footer>
+            <!-- Footer -->
+            <footer>
                 <p>Campus Life Hub - ITC6250 Project</p>
-              </footer>
+            </footer>
 
 
 
 
-      </main>
-</div>
+        </main>
+    </div>
 
-<script type="module" src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
 
 </body>
+
 </html>
