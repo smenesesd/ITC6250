@@ -1,5 +1,6 @@
 
 import { supabase } from "../services/supabaseClient.js";
+import { setupAdminCrud } from "./adminCrud.js";
 
 const ADMIN_UID = "49342608-406a-4af8-a674-44f73a8e71f4";
 
@@ -35,12 +36,22 @@ export function setupAdminAuth() {
     }
 
     function setAdminUI(isAdmin) {
-        loginButton.hidden = isAdmin;
-        logoutButton.hidden = !isAdmin;
+    loginButton.hidden = isAdmin;
+    logoutButton.hidden = !isAdmin;
 
-        emailInput.disabled = isAdmin;
-        passwordInput.disabled = isAdmin;
+    emailInput.disabled = isAdmin;
+    passwordInput.disabled = isAdmin;
+
+    const eventsPanel = document.getElementById("admin-events-panel");
+
+    if (eventsPanel) {
+        eventsPanel.hidden = !isAdmin;
     }
+
+    if (isAdmin) {
+        setupAdminCrud();
+    }
+}
 
     // Restore the existing Supabase session after a page refresh.
     async function restoreSession() {
