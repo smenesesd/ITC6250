@@ -42,6 +42,67 @@ export function setupAdminCrud() {
             type === "success" ? "#15803d" : "";
     }
 
+
+function validateEventForm() {
+    const fields = {
+        title: titleInput,
+        description: descriptionInput,
+        date: dateInput,
+        location: locationInput
+    };
+
+    const errors = {};
+    const isEditing = Boolean(eventIdInput.value);
+
+    if (!titleInput.value.trim()) {
+        errors.title = "Please enter an event title.";
+    }
+
+    if (!descriptionInput.value.trim()) {
+        errors.description = "Please enter a description.";
+    }
+
+    if (!dateInput.value) {
+        errors.date = "Please select an event date.";
+    } else if (!isEditing) {
+        const today = new Date();
+        const localToday = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
+        if (dateInput.value < localToday) {
+            errors.date = "The event date cannot be in the past.";
+        }
+    }
+
+    if (!locationInput.value) {
+        errors.location = "Please select a location.";
+    }
+
+    for (const [name, field] of Object.entries(fields)) {
+        const errorElement = document.getElementById(
+            `admin-event-${name}-error`
+        );
+
+        const message = errors[name] || "";
+
+        if (errorElement) {
+            errorElement.textContent = message;
+        }
+
+        if (message) {
+            field.setAttribute("aria-invalid", "true");
+        } else {
+            field.removeAttribute("aria-invalid");
+        }
+    }
+
+    return Object.keys(errors).length === 0;
+}
+
+
     async function requireAdmin() {
         const { data, error } = await supabase.auth.getUser();
 
@@ -190,10 +251,35 @@ export function setupAdminCrud() {
         eventIdInput.value = "";
         saveButton.textContent = "Create Event";
         cancelButton.hidden = true;
+
+        ["title", "description", "date", "location"]
+            .forEach((name) => {
+                const field = document.getElementById(
+                    `admin-event-${name}`
+            );
+
+            const errorElement = document.getElementById(
+                `admin-event-${name}-error`
+            );
+
+            field?.removeAttribute("aria-invalid");
+
+            if (errorElement) {
+                errorElement.textContent = "";
+            }
+        });
     }
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+
+        if(!validateEventForm()) {
+            setStatus(
+                "Please correct the highlighted fields.",
+                "error"
+            );
+            return;
+        }
         saveButton.disabled = true;
 
         try {

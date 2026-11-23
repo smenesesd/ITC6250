@@ -5,10 +5,16 @@ export function displayCampusData(data) {
         return;
     }
 
-    displayEvents(data.events || []);
+    allCampusEvents = data.events || [];
+
+    filterCampusEvents();
+
     displaySports(data.sports || []);
     displayUpdates(data.updates || []);
+
 }
+
+let allCampusEvents = [];
 
 function showEmptyState(container, message) {
     const text = document.createElement("p");
@@ -23,10 +29,19 @@ function displayEvents(events) {
 
     container.replaceChildren();
 
+    
     if (events.length === 0) {
-        showEmptyState(container, "No campus events available.");
-        return;
-    }
+        const searchInput = document.getElementById("event-search-input");
+        const isSearching = searchInput && searchInput.value.trim() !== "";
+
+        const message = isSearching
+            ? "No events match your search."
+            : "No campus events available.";
+
+        showEmptyState(container, message);
+    return;
+}
+
 
     events.forEach((event) => {
         const card = document.createElement("div");
@@ -48,6 +63,36 @@ function displayEvents(events) {
         card.append(category, title, description, location);
         container.appendChild(card);
     });
+}
+
+function filterCampusEvents() {
+    const searchInput = document.getElementById("event-search-input");
+
+    if (!searchInput) return;
+
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    const filteredEvents = allCampusEvents.filter((event) => {
+        const title = (event.title || "").toLowerCase();
+        const description = (event.description || "").toLowerCase();
+        const location = (event.location || "").toLowerCase();
+
+        return (
+            title.includes(searchTerm) ||
+            description.includes(searchTerm) ||
+            location.includes(searchTerm)
+        );
+    });
+
+    displayEvents(filteredEvents);
+}
+
+function setupEventSearch() {
+    const searchInput = document.getElementById("event-search-input");
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener("input", filterCampusEvents);
 }
 
 function displaySports(sports) {
@@ -110,3 +155,7 @@ function displayUpdates(updates) {
         container.appendChild(item);
     });
 }
+
+
+setupEventSearch();
+

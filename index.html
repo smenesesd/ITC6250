@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Life Hub</title>
+    <title>Campus Life Hub | Version 7</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -118,19 +118,35 @@
                         <p>Create, edit, and delete campus events.</p>
                     </div>
 
-                    <form id="admin-event-form">
+                    <form id="admin-event-form" novalidate>
 
                         <input type="hidden" id="admin-event-id">
 
+                        
                         <div class="form-field">
                             <label for="admin-event-title">Event Title</label>
-                            <input type="text" id="admin-event-title" maxlength="120" required>
+                            <input type="text" id="admin-event-title"
+                                maxlength="120"
+                                aria-describedby="admin-event-title-error"
+                                required>
+
+                            <p id="admin-event-title-error"
+                                class="field-error"
+                                aria-live="polite"></p>
                         </div>
 
                         <div class="form-field">
                             <label for="admin-event-description">Description</label>
-                            <textarea id="admin-event-description" rows="3" required></textarea>
+                            <textarea id="admin-event-description"
+                                rows="3"
+                                aria-describedby="admin-event-description-error"
+                                required></textarea>
+
+                            <p id="admin-event-description-error"
+                                class="field-error"
+                                aria-live="polite"></p>
                         </div>
+
 
                         <div class="form-field">
                             <label for="admin-event-category">Category</label>
@@ -145,15 +161,30 @@
 
                         <div class="form-field">
                             <label for="admin-event-date">Event Date</label>
-                            <input type="date" id="admin-event-date" required>
+                            <input type="date" id="admin-event-date" 
+                            aria-describedby="admin-event-date-error" required>
+                            <p id="admin-event-date-error"
+                            class="field-error"
+                            aria-live="polite">
+                            </p>
                         </div>
 
+                        
                         <div class="form-field">
                             <label for="admin-event-location">Location</label>
-                            <select id="admin-event-location" required>
+
+                            <select
+                                id="admin-event-location"
+                                aria-describedby="admin-event-location-error"
+                                required>
                                 <option value="">Loading locations...</option>
                             </select>
+
+                            <p id="admin-event-location-error"
+                                class="field-error"
+                                aria-live="polite"></p>
                         </div>
+
 
                         <button type="submit" id="admin-event-save-button">
                             Create Event
@@ -285,18 +316,50 @@
                     <button id="eventsButton">Events</button>
                 </div>
 
+                <div class ="event-search">
+                    <label for="event-search-input">Search campus events</label>
+                    <input
+                        type="search"
+                        id="event-search-input"
+                        placeholder="Search by event, description, or location"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+                <div id="campus-data-status"
+                    role="status"
+                    aria-live="polite"></div>
+                <button type="button"
+                    id="campus-data-retry"
+                    hidden>
+                    Retry Loading Campus Data
+                </button>
+
+                
                 <div class="explore-grid">
 
-                    <div>
-                        <h3>Events</h3>
-                        <div id="events-list" class="dynamic-list"></div>
-                    </div>
+                    <section class="explore-category"
+                            aria-labelledby="campus-events-heading">
+                        <h3 id="campus-events-heading">Events</h3>
 
-                    <div>
-                        <h3>Sports</h3>
-                        <div id="sports-list" class="dynamic-list"></div>
-                    </div>
+                        <div id="events-list"
+                            class="dynamic-list"
+                            aria-label="Campus events">
+                        </div>
+                    </section>
+
+                    <section class="explore-category"
+                            aria-labelledby="campus-sports-heading">
+                        <h3 id="campus-sports-heading">Sports</h3>
+
+                        <div id="sports-list"
+                            class="dynamic-list"
+                            aria-label="Intramural sports">
+                        </div>
+                    </section>
                 </div>
+
             </section>
 
             <!-- Campus Updates -->
@@ -325,11 +388,19 @@
 
 
                 </div>
+
+                <div class="ai-summary-card">
+                    <button type="button" id="ai-summary-button">
+                        Summarize Campus Updates with AI
+                    </button>
+                    <p id="ai-summary-status" role="status" aria-live="polite"></p>
+                    <div id="ai-summary-result" class="ai-summary-result" aria-live="polite" hidden></div>
+                </div>
             </section>
 
             <!-- Footer -->
             <footer>
-                <p>Campus Life Hub - ITC6250 Project</p>
+                <p>Campus Life Hub - ITC6250 Project | Version 7</p>
             </footer>
 
 
