@@ -87,13 +87,23 @@ function filterCampusEvents() {
     displayEvents(filteredEvents);
 }
 
+
 function setupEventSearch() {
     const searchInput = document.getElementById("event-search-input");
 
     if (!searchInput) return;
 
-    searchInput.addEventListener("input", filterCampusEvents);
+    let searchTimeout;
+
+    searchInput.addEventListener("input", () => {
+        clearTimeout(searchTimeout);
+
+        searchTimeout = setTimeout(() => {
+            filterCampusEvents();
+        }, 300);
+    });
 }
+
 
 function displaySports(sports) {
     const container = document.getElementById("sports-list");
